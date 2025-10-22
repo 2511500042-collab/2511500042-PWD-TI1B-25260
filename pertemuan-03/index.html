@@ -1,243 +1,186 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Profil WABIHAMDIKA</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background-color: #e3f2fd;
-      margin: 0;
-      padding: 0;
-      color: #333;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Judul halaman halo</title>
+    <style>
+        #about,
+        #contact {
+            background-color: #ffffff;
+            border-radius: 10px;
+            padding: 20px;
+            max-width: 700px;
+            margin: 20px auto;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1)
+        }
 
-    header {
-      background-color: #1565c0;
-      color: white;
-      text-align: center;
-      padding: 20px 0;
-      font-size: 1.6em;
-      font-weight: bold;
-    }
+        #about h2,
+        #contact h2 {
+            color: #003366;
+            border-bottom: 2px solid #003366;
+            padding-bottom: 6px;
+            margin-top: 0;
+            margin-bottom: 16px;
+        }
 
-    nav {
-      background-color: #bbdefb;
-      text-align: center;
-      padding: 10px 0;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    }
+        #about p,
+        #contact label {
+            display: flex;
+            justify-content: flex-start;
+            align-items: baseline;
+            margin: 0;
+            padding: 6px 0;
+            border-bottom: 1px solid #e6e6e6;
+        }
 
-    nav ul {
-      list-style: none;
-      margin: 0;
-      padding: 0;
-    }
+        #about strong,
+        #contact label>span {
+            min-width: 180px;
+            color: #003366;
+            font-weight: 600;
+            text-align: right;
+            padding-right: 16px;
+            flex-shrink: 0;
+        }
 
-    nav ul li {
-      display: inline;
-      margin: 0 15px;
-    }
+        #contact input,
+        #contact textarea {
+            flex: 1;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            padding: 8px;
+            color: #000;
+            font-weight: normal;
+            margin: 0;
+            box-sizing: border-box;
+        }
 
-    nav ul li a {
-      text-decoration: none;
-      color: #0d47a1;
-      font-weight: bold;
-      transition: color 0.3s ease;
-    }
+        #contact button {
+            margin-top: 10px;
+            display: inline-block;
+            padding: 10px 24px;
+            font-size: 16px;
+            border-radius: 6px;
+            cursor: pointer;
+            border: none;
+            transition: all 0.3s ease;
+            margin-right: 8px;
+        }
 
-    nav ul li a:hover {
-      color: #1565c0;
-    }
+        #contact button[type="submit"] {
+            background-color: #003366;
+            color: #fff;
+            font-weight: 600;
+        }
 
-    main {
-      padding: 40px 20px;
-    }
+        #contact button[type="reset"] {
+            background-color: #b4b4b4;
+            color: #272727;
+            font-weight: 500;
+        }
 
-    section {
-      max-width: 800px;
-      margin: 40px auto;
-      background-color: #ffffff;
-      padding: 30px;
-      border-radius: 10px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    }
+        #contact button[type="submit"]:hover {
+            background-color: #0379ee;
+            transform: translateY(-1px);
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+        }
 
-    h2 {
-      text-align: center;
-      color: #166def;
-      margin-bottom: 20px;
-    }
+        #contact button[type="reset"]:hover {
+            background-color: #cccccc;
+            transform: translateY(-1px);
+        }
 
-    p {
-      text-align: center;
-      line-height: 1.6;
-    }
+        @media (max-width: 600px) {
 
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      margin-top: 20px;
-    }
+            #about p,
+            #contact label {
+                flex-direction: column;
+                align-items: flex-start;
+            }
 
-    th, td {
-      padding: 10px;
-      text-align: left;
-      border-bottom: 1px solid #1c1a1a;
-    }
+            #about strong,
+            #contact label>span {
+                text-align: left;
+                padding-right: 0;
+                margin-bottom: 2px;
+            }
 
-    th {
-      color: #1279f0;
-      width: 35%;
-    }
+            #contact input,
+            #contact textarea,
+            #contact button {
+                width: 100%;
+            }
+        }
+    </style>
 
-    section#contact form label {
-      display: block;
-      margin-top: 15px;
-      font-weight: bold;
-      color: #1a237e;
-    }
-
-    section#contact form input,
-    section#contact form textarea {
-      width: 100%;
-      padding: 10px;
-      margin-top: 5px;
-      border: 1px solid #121314;
-      border-radius: 5px;
-      box-sizing: border-box;
-      font-size: 14px;
-    }
-
-    section#contact form textarea {
-      resize: vertical;
-    }
-
-    section#contact form button {
-      margin-top: 20px;
-      padding: 10px 20px;
-      font-size: 14px;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-      color: rgb(14, 14, 14);
-    }
-
-    section#contact form button[type="submit"] {
-      background-color: #1e88e5;
-      margin-right: 10px;
-    }
-
-    section#contact form button[type="reset"] {
-      background-color: #ed1b17ff;
-    }
-
-    section#contact form button:hover {
-      opacity: 0.9;
-    }
-
-    footer {
-      background-color: #1565c0;
-      color: white;
-      text-align: center;
-      padding: 15px 0;
-      font-weight: bold;
-      letter-spacing: 1px;
-    }
-  </style>
 </head>
+
 <body>
+    <header>
+        <h1></h1>
+        <nav>
+            <ul>
+                <li><a href="#home">Beranda</a></li>
+                <li><a href="#about">Tentang</a></li>
+                <li><a href="#contact">Kontak</a></li>
+            </ul>
+        </nav>
+    </header>
 
-  <header>
-    Profil Pribadi - WABIHAMDIKA
-  </header>
+    <main>
+        <section id="home">
+            <h2>Selamat Datang</h2>
+            <p>ini contoh paragraf HTML.</p>
+        </section>
+        <section id="about">
 
-  <nav>
-    <ul>
-      <li><a href="#beranda">Beranda</a></li>
-      <li><a href="#tentang">Tentang</a></li>
-      <li><a href="#kontak">Kontak</a></li>
-    </ul>
-  </nav>
+            <h2>Tentang kami</h2>
+            <p> <strong>Nama:</strong>WABIHAMDIKA</p>
+            <p> <strong>Nim:</strong>2511500042</p>
+            <p> <strong>Tempat Lahir:</strong>BABAT</p>
+            <p> <strong>Tanggal Lahir:</strong>05 NOVEMBER 2006</p>
+            <p> <strong>Hobi:</strong>MAIN GAME</p>
+            <p> <strong>Pasangan:</strong>SEDANG DI USAHAKAN</p>
+            <p> <strong>Pekerjaan:</strong>MAHASISWA</p>
+            <p> <strong>Nama Ayah:</strong>SUPRIADI</p>
+            <p> <strong>Nama Ibu:</strong>ERMAINI</p>
+            <p> <strong>Nama Kakak:</strong>SIL,ANIE,ANTI,ARDILA</p>
+            <p> <strong>Nama Adek:</strong>-</p>
 
-  <main>
-    <section id="beranda">
-      <h2>Selamat Datang</h2>
-      <p>Ini contoh paragraf HTML.</p>
-    </section>
+        </section>
+        <section id="contact">
+            <h2>Kontak Kami</h2>
+            <form action="" method="GET">
 
-    <section id="tentang">
-      <h2>Tentang Kami</h2>
-      <table>
-        <tr>
-          <th>Nama:</th>
-          <td>WABIHAMDIKA</td>
-        </tr>
-        <tr>
-          <th>NIM:</th>
-          <td>2511500042</td>
-        </tr>
-        <tr>
-          <th>Tempat Lahir:</th>
-          <td>BABAT</td>
-        </tr>
-        <tr>
-          <th>Tanggal Lahir:</th>
-          <td>05 NOVEMBER 2006</td>
-        </tr>
-        <tr>
-          <th>Hobi:</th>
-          <td>MAIN GAME</td>
-        </tr>
-        <tr>
-          <th>Pasangan:</th>
-          <td>SEDANG DI USAHAKAN</td>
-        </tr>
-        <tr>
-          <th>Pekerjaan:</th>
-          <td>MAHASISWA</td>
-        </tr>
-        <tr>
-          <th>Nama Ayah:</th>
-          <td>SUPRIADI</td>
-        </tr>
-        <tr>
-          <th>Nama Ibu:</th>
-          <td>ERMAINI</td>
-        </tr>
-        <tr>
-          <th>Nama Kakak:</th>
-          <td>SILVIA,ANIE,ANTI,ARDILA</td>
-        </tr>
-        <tr>
-          <th>Nama Adek:</th>
-          <td>-</td>
-        </tr>
-      </table>
-    </section>
+                <label for="TxtNama">
+                    <span>Nama:</span>
+                    <input type="text" id="TxtNama" name="TxtNama" placeholder="Masuk Nama" required
+                        autocomplete="name">
+                </label>
 
-    <section id="kontak">
-      <h2>Kontak Kami</h2>
-      <form action="" method="GET">
-        <label for="txtNama">Nama:</label>
-        <input type="text" id="txtNama" name="txtNama" placeholder="Masuk Nama" required>
+                <label for="Txtemail">
+                    <span>Email:</span>
+                    <input type="Email" id="texemail" placeholder="Masuk email" required autocomplete="email">
+                </label>
 
-        <label for="txtEmail">Email:</label>
-        <input type="email" id="txtEmail" name="txtEmail" placeholder="Masuk Email" required>
+                <label for="Txtpesan">
+                    <span>Pesan:</span>
+                    <textarea id="Txtpesan" name="Txtpesan" Rows="4" placeholder="Tulis Pesan Anda..."
+                        required></textarea>
+                </label>
 
-        <label for="txtPesan">Pesan:</label>
-        <textarea id="txtPesan" name="txtPesan" rows="4" placeholder="Tulis Pesan Anda..." required></textarea>
+                <button Type="Submit">Kirim</button>
+                <button Type="Reset">Batal</button>
+            </form>
+        </section>
+    </main>
 
-        <button type="submit">Kirim</button>
-        <button type="reset">Batal</button>
-      </form>
-    </section>
-  </main>
-
-  <footer>
-    &copy; 2025 WABIHAMDIKA[2511500042]
-  </footer>
+    <footer>
+        <p>&copy; 2025 WABIHAMDIKA [2511500042]</p>
+    </footer>
 
 </body>
+
 </html>
